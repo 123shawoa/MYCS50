@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    PRICES
+{% endblock %}
+
+{% block main %}
+    <h1>Stock prices</h1>
+<table class="styled-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>symbol</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+                    <td>{{ symbol.name }}</td>
+                    <td>{{ symbol.price | usd }}</td>
+                    <td>{{ symbol.symbol }}</td>
+                </tr>
+        </tbody>
+    </table>
+{% endblock %}
+

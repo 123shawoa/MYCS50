@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    HISTORY
+{% endblock %}
+
+{% block main %}
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>symbol</th>
+                <th>shares</th>
+                <th>type</th>
+                <th>time</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in insert_query %}
+        <tr>
+            <td>{{ row.name}}</td>
+            <td>{{ row.price  | usd }}</td>
+            <td>{{ row.symbol }}</td>
+            <td>{{ row.shares }}</td>
+            <td>{{ row.type}}</td>
+            <td>{{ row.time}}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+

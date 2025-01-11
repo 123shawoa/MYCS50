@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    PRICES
+{% endblock %}
+
+{% block main %}
+    <h1>USER DATA</h1>
+    <h2>USER CASH</h2>
+    <h2>{{cash | usd}}</h2>
+    <h2>Total Funds</h2>
+    <h2>{{ total_funds | usd }}</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>symbol</th>
+                <th>shares</th>
+                <th>total_value</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in insert_query %}
+        <tr>
+            <td>{{ row.name }}</td>
+            <td>{{ row.price | usd}}</td>
+            <td>{{ row.symbol }}</td>
+            <td>{{ row.shares }}</td>
+            <td>{{ (row.price * row.shares) | usd }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+
