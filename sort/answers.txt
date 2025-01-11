@@ -1,0 +1,11 @@
+sort1 uses: Bubble sort
+
+How do you know?: It solves sorted50000 the fastest.
+
+sort2 uses: Merge sort
+
+How do you know?: It solves 50000 random words the fastest.
+
+sort3 uses: Selection sort
+
+How do you know?: It solves equally for 50000 random and 50000 sorted whilst being the slowest.
